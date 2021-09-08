@@ -1,0 +1,61 @@
+{
+	"name": "Flatbox",
+	"author": "Engin Bayram",
+	"url": "https://www.mediawiki.org/wiki/Skin:Flatbox",
+	"descriptionmsg": "flatbox-desc",
+	"namemsg": "skinname-flatbox",
+	"license-name": "",
+	"type": "skin",
+	
+    "ValidSkinNames": {
+		"flatbox": "Flatbox"
+	},
+
+	"AutoloadClasses": {
+		"SkinFooBar": "Flatbox.skin.php"
+	},
+
+	"MessagesDirs": {
+		"Flatbox": "i18n"
+	},
+
+    "ResourceModules": {
+		"skins.flatbox": {
+                "class": "ResourceLoaderSkinModule",
+                "features": {
+                    "normalize": true,
+                    "elements": true,
+                    "content": true,
+                    "content-parser-output": true,
+                    "interface": true,
+                    "interface-category": true,
+                    "logo": true
+                },
+                "styles": {
+                    "resources/screen.less": {
+                        "media": "screen"
+                    },
+                    "resources/screen-desktop.less": {
+                        "media": "screen and (min-width: 751px)"
+                    },
+                    "resources/screen-mobile.less": {
+                        "media": "screen and (max-width: 750px)"
+                    },
+                    "resources/print.css": {
+                        "media": "print"
+                    }
+		        }
+	        },
+        "ResourceFileModulePaths": {
+            "localBasePath": "",
+            "remoteSkinPath": "Flatbox"
+        },
+        "skins.flatbox.js": {
+			"scripts": [
+				"main.js"
+			],
+			"position": "top",
+			"dependencies": "jquery.ui.dialog"
+		}
+    }
+}
