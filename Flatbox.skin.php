@@ -33,3 +33,26 @@
 	}
 }
 
+<?php
+/**
+ * BaseTemplate class for Flatbox skin
+ *
+ * @ingroup Skins
+ */
+class FlatboxTemplate extends BaseTemplate {
+	/**
+	 * Outputs the entire contents of the page
+	 */
+	public function execute() {
+		$this->html( 'headelement' ); ?>
+
+/** Your skin's code goes here.
+  * The rest of this page explains what to write here.
+**/
+
+<?php $this->printTrail(); ?>
+</body>
+</html><?php
+	}
+}
+
