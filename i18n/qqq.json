@@ -1,4 +1,7 @@
 {
-  "skinname-flatbox": "{{optional}}",
-  "flatbox-desc": "{{desc|what=skin|name=Flatbox|url=https://www.mediawiki.org/wiki/Skin:Flatbox}}"
+	"@metadata": {
+		"authors": [ "Engin Bayram" ]
+	},
+	"skinname-flatbox": "{{optional}}",
+	"flatbox-desc": "{{desc|what=skin|name=Flatbox|url=https://www.mediawiki.org/wiki/Skin:Flatbox}}"
 }

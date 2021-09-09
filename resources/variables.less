@@ -1,8 +1,11 @@
-@background-color-base: #739708;
-@background-color-article: white;
-@color-base: #54595d;
-@color-gray: #a2a9b1;
-@color-gray-2: #eaecf0;
-@color-link: #0645ad;
-@color-link--visited: #0b0080;
-@font-family: 'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI','Oxygen','Ubuntu','Cantarell','Helvetica Neue',sans-serif;
+// Uncomment to use MediaWiki-supplied mixins
+// @import "mediawiki.mixins";
+
+@width: 66em;
+@border: #ccc;
+
+// To hide objects, but keep them accessible for screen-readers
+.hidden() {
+	position: absolute;
+	top: -9999px;
+}

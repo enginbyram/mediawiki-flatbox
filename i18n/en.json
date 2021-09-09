@@ -1,4 +1,7 @@
 {
-  "skinname-flatbox": "Flatbox",
-  "Flatbox-desc": "A skin created by [https://skins.wmflabs.org skins.wmflabs.org v.2.0]"
+	"@metadata": {
+		"authors": [ "Engin Bayram" ]
+	},
+	"skinname-flatbox": "Flatbox",
+	"flatbox-desc": "Skin made for aartha.com"
 }
