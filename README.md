@@ -1,5 +1,5 @@
 # Flatbox
-This is a skin made for **MediaWiki** websites. Primarily used for [Aarthalopedia(or aarthal for short)](https://www.aarthal.com).. 
+This is a skin made for **MediaWiki** websites. Primarily used for [Aarthalopedia, or aarthal for short](http://aarthal.com).
 
 ## What is Mediawiki?
 The website explains like this: *"The MediaWiki software is used by tens of thousands of websites and thousands of companies and organizations. It powers Wikipedia and also this website. MediaWiki helps you collect and organize knowledge and make it available to people. It's powerful, multilingual, free and open, extensible, customizable, reliable, and free of charge."*
