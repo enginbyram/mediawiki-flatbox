@@ -6,3 +6,17 @@ The website explains like this: *"The MediaWiki software is used by tens of thou
 
 ## What is Aarthal then?
 Aarthal is a fantasy-world filled collectively; whomever wants to contribute, can do it. Its borders are drawn from the beginning, so newcomers can add stuff without breaking the world.
+
+#### Installing the skin
+You can clone this repository with git:
+
+'''
+git clone https://github.com/enginbyram/mediawiki-flatbox
+'''
+
+* After cloning, change the name of the folder to **Flatbox**.
+* Put the folder inside your skin folder.
+* Open LocalSettings.php file, and add following code to LocalSettings.php: '''wfLoadSkin( 'Flatbox' );'''
+* Go to wiki site and change user's skin preference. Done!
+
+* If you want to make Flatbox your default skin, you can do it by changing **$wgDefaultSkin** to *"flatbox"*. 

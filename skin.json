@@ -1,61 +1,83 @@
 {
-	"name": "Flatbox",
-	"author": "Engin Bayram",
-	"url": "https://www.mediawiki.org/wiki/Skin:Flatbox",
-	"descriptionmsg": "flatbox-desc",
-	"namemsg": "skinname-flatbox",
-	"license-name": "",
-	"type": "skin",
-	
-    "ValidSkinNames": {
-		"flatbox": "Flatbox"
-	},
-
-	"AutoloadClasses": {
-		"SkinFooBar": "Flatbox.skin.php"
-	},
-
-	"MessagesDirs": {
-		"Flatbox": "i18n"
-	},
-
-    "ResourceModules": {
-		"skins.flatbox": {
-                "class": "ResourceLoaderSkinModule",
-                "features": {
-                    "normalize": true,
-                    "elements": true,
-                    "content": true,
-                    "content-parser-output": true,
-                    "interface": true,
-                    "interface-category": true,
-                    "logo": true
-                },
-                "styles": {
-                    "resources/screen.less": {
-                        "media": "screen"
-                    },
-                    "resources/screen-desktop.less": {
-                        "media": "screen and (min-width: 751px)"
-                    },
-                    "resources/screen-mobile.less": {
-                        "media": "screen and (max-width: 750px)"
-                    },
-                    "resources/print.css": {
-                        "media": "print"
-                    }
-		        }
-	        },
-        "ResourceFileModulePaths": {
-            "localBasePath": "",
-            "remoteSkinPath": "Flatbox"
-        },
-        "skins.flatbox.js": {
-			"scripts": [
-				"main.js"
-			],
-			"position": "top",
-			"dependencies": "jquery.ui.dialog"
-		}
+  "name": "Flatbox",
+  "version": "1.0.0",
+  "namemsg": "skinname-flatbox",
+  "descriptionmsg": "flatbox-skin-desc",
+  "url": "https://www.mediawiki.org/wiki/Skin:Flatbox",
+  "author": [
+    "[https://skins.wmflabs.org skins.wmflabs.org v.2.0]"
+  ],
+  "type": "skin",
+  "requires": {
+    "MediaWiki": ">= 1.37.0"
+  },
+  "license-name": "GPL-2.0-or-later",
+  "manifest_version": 2,
+  "ValidSkinNames": {
+    "flatbox": {
+      "class": "SkinMustache",
+      "args": [
+        {
+          "name": "Flatbox",
+          "responsive": true,
+          "messages": [
+            "sitetitle",
+            "search",
+            "otherlanguages",
+            "tagline",
+            "search"
+          ],
+          "styles": [
+            "mediawiki.ui.icon",
+            "mediawiki.ui.button",
+            "skins.flatbox.styles"
+          ],
+          "scripts": [
+            "skins.flatbox"
+          ]
+        }
+      ]
     }
+  },
+  "MessagesDirs": {
+    "Flatbox": [
+      "i18n"
+    ]
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "",
+    "remoteSkinPath": "Flatbox"
+  },
+  "ResourceModules": {
+    "skins.flatbox.styles": {
+      "class": "ResourceLoaderSkinModule",
+      "features": {
+        "normalize": true,
+        "elements": true,
+        "content-tables": true,
+        "content-links": true,
+        "content-media": true,
+        "content-links-external": false,
+        "interface-message-box": true,
+        "interface-category": true,
+        "toc": true
+      },
+      "targets": [
+        "desktop",
+        "mobile"
+      ],
+      "styles": [
+        "resources/skin.less"
+      ]
+    },
+    "skins.flatbox": {
+      "targets": [
+        "desktop",
+        "mobile"
+      ],
+      "packageFiles": [
+        "resources/skin.js"
+      ]
+    }
+  }
 }
