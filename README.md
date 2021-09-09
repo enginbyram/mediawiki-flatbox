@@ -1,0 +1,1 @@
+# This is a skin made for MediaWiki websites. Primarily used for aarthal.com .
