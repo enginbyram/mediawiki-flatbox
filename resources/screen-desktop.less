@@ -1,16 +1,13 @@
+/*	disabling some useless elements	*/
+#p-tb #t-cite,
+#t-print,#t-permalink,
+#t-info, #p-namespaces-label,
+#p-views-label, #p-cactions-label {
+  display: none;
+}
+
 #mw-wrapper {
-    position: relative;
-  }
-
-  /*	disabling some useless elements	*/
-  #p-tb #t-cite,
-  #t-print,#t-permalink,
-  #t-info, #p-namespaces-label,
-  #p-views-label, #p-cactions-label {
-    display: none;
-  }
-
-  /*  header goes here  */
+  position: relative;
 
   #header-wrapper {
     position: fixed;
@@ -30,79 +27,85 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
 
-  #p- ul {
-    cursor: default;
-    margin: -4.1em 200px;
-    width: auto;
-    height: 44px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    list-style: none;
-  }
+    #cat-tree {
+      a {
+        color: #f5f5f7;
+        opacity: .8;
+        transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        font-size: 0.785em;
+        font-weight: 200;
 
-  #p- li {
-    position: relative;
-    bottom: 0.675em;
-  }
+        &:hover {
+          opacity: 1;
+        }
+      }
 
-  #cat-tree a {
-    color: #f5f5f7;
+      #p- {
+        ul {
+          cursor: default;
+          margin: -4.1em 200px;
+          width: auto;
+          height: 44px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          list-style: none;
+        }
+
+        li {
+          position: relative;
+          bottom: 0.675em;
+        }
+      }
+    }
+  }
+}
+
+// Upper-left logo elements goes gere
+#p-logo {
+  display: flex;
+  justify-content: start;
+  margin: 0em 0em 2em 2em;
+  width: max-content;
+
+  a {
+    text-decoration: none;
     opacity: .8;
-    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    font-size: 0.785em;
-    font-weight: 200;
+    transition: opacity 0.3s cubic-bezier(0.25,0.1,0.25,1);
+  
+    &:hover {
+      opacity: 1;
+    }
   }
-
-  #cat-tree a:hover {
-    opacity: 1;
-  }
-
-  /*  logo here  */
-
-  #p-logo {
-    display: flex;
-    justify-content: start;
-    margin: 0em 0em 2em 2em;
-    width: max-content;
-  }
-
-  #p-logo h1 {
+  
+  h1 {
     border-bottom: unset;
     color: #f5f5f7;
     font-weight: 600;
     font-size: 1.1075em;
   }
+}
 
-  #p-logo a {
-    text-decoration: none;
-    opacity: .8;
-    transition: opacity 0.3s cubic-bezier(0.25,0.1,0.25,1);
-  }
+// Search bar goes here
+#p-search {
+  display: flex;
+  justify-content: center;
+  margin: 5em 5em 0em 20em;
+  padding: 0 0;
+  clear: both;
+  position: relative;
+  top: 30px;
 
-  #p-logo a:hover {
-    opacity: 1;
-  }
-
-  /*  search bar here  */
-
-  #p-search {
-    display: flex;
-    justify-content: center;
-    margin: 5em 5em 0em 20em;
-    padding: 0 0;
-    clear: both;
-    position: relative;
-    top: 30px;
+  h3 {
+    display: none;
   }
 
   #searchInput {
@@ -111,151 +114,105 @@
     font-size: 1.0875em;
     width: -moz-available;
   }
+}
 
-  #p-search h3 {
-    display: none;
-  }
+// Page Tools goes here
+#page-tools {
+  padding-left: calc(max(22px, env(safe-area-inset-left)));
+  padding-right: calc(max(22px, env(safe-area-inset-right)));
+  cursor: default;
+  margin: 0 -10px;
+  width: auto;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-  /*  page tools here  */
-
-  #page-tools {
-    padding-left: calc(max(22px, env(safe-area-inset-left)));
-    padding-right: calc(max(22px, env(safe-area-inset-right)));
-    cursor: default;
-    margin: 0 -10px;
-    width: auto;
-    height: 44px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  #page-tools ul {
+  ul {
     display: flex;
   }
 
-  #page-tools li {
+  li {
     display: flex;
     padding: 0 10px;
     font-size: 13px;
   }
 
-  #page-tools a {
+  a {
     color: #000000eb;
   }
+}
 
-  /*  navigation panel goes here  */
 
-  #mw-navigation {
-    display: flex;
-    flex-flow: column;
-    width: max-content;
-    padding: 1em 1em 1em 0;
-    margin-right: 1em;
-    background: #000000f2;
-    box-shadow: -1em 0em 1em #585859;
-    border-radius: 20px;
-    margin: 0 0 1.875em 1.875em;
-    font-size: 0.875em;
-    float: left;
-    position: fixed;
-  }
+// Left navigation panel elements are here
+// I need to make it different, as its not eye-candy for now
+#mw-navigation {
+  display: flex;
+  flex-flow: column;
+  width: max-content;
+  padding: 1em 1em 1em 0;
+  margin-right: 1em;
+  background: #000000f2;
+  box-shadow: -1em 0em 1em #585859;
+  border-radius: 20px;
+  margin: 0 0 1.875em 1.875em;
+  font-size: 0.875em;
+  float: left;
+  position: fixed;
 
-  #mw-navigation .mw-portlet-body li {
-    display: grid;
-    padding: 0.2em;
-    padding-top: .375em;
-    text-align: center;
-  }
-
-  #mw-navigation h3 {
+  h3 {
     font-size: .875em;
     font-weight: 400;
     color: #f5f5f7;
     text-align: center;
   }
 
-  #mw-navigation .mw-portlet-body {
-    padding: 1.275em;
-  }
-
-  #mw-navigation a {
+  a {
     color: #f5f5f7;
     transition: opacity .2s ease;
     font-weight: 300;
     opacity: .8;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  #mw-navigation a:hover {
-    opacity: 1;
-  }
-
-  #mw-navigation a.new, #p-personal a.new {
+  a.new, #p-personal a.new {
     color: #575757;
   }
 
-  /*  content elements goes here  */
+  .mw-portlet-body {
+    padding: 1.275em;
 
-  #content .mw-body {
-    margin: 0 5em;
-    padding-left: 10em;
+    li {
+      display: grid;
+      padding: 0.2em;
+      padding-top: .375em;
+      text-align: center;
+    }
   }
-  
-  /*  footer elements goes here  */
+}
 
-  .mw-footer {
-    padding: 0 10em 0 20em;
-  }
-  
-  .mw-footer #footer-icons {
-    float: right;
-    padding: 1em 0;
-  }
-  
-  .mw-footer #footer-places {
-    float: right;
-    clear: right;
-    padding: 1em 0;
-    font-size: .875em;
-  }
-  
-  .mw-footer a {
-    color: rgba(0,0,0,0.5);
-  }
-  
-  .mw-footer #footer-info {
-    float: left;
-    clear: left;
-    padding: 1em 0;
-    font-size: .875em;
-  }
-  
-  
-  .mw-footer li {
-    display: inline;
-    padding:0 .5em;
-  }
+// Content elements goes here
+#content .mw-body {
+  margin: 0 5em;
+  padding-left: 10em;
+}
 
-  /*  content elements goes here  */
-  
-  #content {
-    margin: 10em 6em 10em 15.875em;
-    padding: 2em;
-    box-shadow: -1.875em 1em 2em rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 5;
-  }
-  
-  #mw-content-text {
-    line-height: 1.6;
-  }
+#content {
+  margin: 10em 6em 10em 15.875em;
+  padding: 2em;
+  box-shadow: -1.875em 1em 2em rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 5;
 
   .firstHeading {
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -265,48 +222,87 @@
     letter-spacing: -.015em;
   }
 
-  /*  catlinks  */
+  #mw-content-text {
+    line-height: 1.6;
 
-  #catlinks {
-    text-align: left;
+    // Category link elements are here
+    #catlinks {
+      text-align: left;
+      font-size: .875em;
+    }
+  }
+}
+
+// footer elements goes here
+.mw-footer {
+  padding: 0 10em 0 20em;
+
+  a {
+    color: rgba(0,0,0,0.5);
+  }
+
+  li {
+    display: inline;
+    padding:0 .5em;
+  }
+
+  #footer-icons {
+    float: right;
+    padding: 1em 0;
+  }
+
+  #footer-places {
+    float: right;
+    clear: right;
+    padding: 1em 0;
     font-size: .875em;
   }
 
-  // other screen types
-
-  @media only screen and (max-width: 860px) {
-
-    #p-logo {
-        display: none;
-    }
-
-    #p- ul {
-        margin: 0 0 0 4em;
-        width: -moz-fit-content;
-        justify-content: center;
-    }
-
-    #p- li {
-        padding: 0 5px;
-    }
-
-    #p-search {
-        margin: 5em 5em;
-    }
-
-    #mw-navigation {
-        display: none;
-    }
-
-    #page-tools {
-        display: none;
-    }
-
-    #content {
-        margin: 10em 5em;
-    }
-
-    .mw-footer {
-        display: none;
-    }
+  #footer-info {
+    float: left;
+    clear: left;
+    padding: 1em 0;
+    font-size: .875em;
   }
+}
+
+// Responsive elements for desktop screens
+// Please use screen-mobile.less file for mobile elements
+// This methods are for only screens wider than 750px
+// screen-mobile.less is for screens narrower than 750px
+@media only screen and (max-width: 860px) {
+
+  #p-logo {
+      display: none;
+  }
+
+  #p- ul {
+      margin: 0 0 0 4em;
+      width: -moz-fit-content;
+      justify-content: center;
+  }
+
+  #p- li {
+      padding: 0 5px;
+  }
+
+  #p-search {
+      margin: 5em 5em;
+  }
+
+  #mw-navigation {
+      display: none;
+  }
+
+  #page-tools {
+      display: none;
+  }
+
+  #content {
+      margin: 10em 5em;
+  }
+
+  .mw-footer {
+      display: none;
+  }
+}
