@@ -1,8 +1,4 @@
-/* Styles appear on displays over 750 pixels wide */
-@import 'variables.less';
-
-
-  #mw-wrapper {
+#mw-wrapper {
     position: relative;
   }
 
@@ -101,8 +97,8 @@
 
   #p-search {
     display: flex;
-    justify-content: end;
-    margin: 5em 14em 0em 5em;
+    justify-content: center;
+    margin: 5em 5em 0em 20em;
     padding: 0 0;
     clear: both;
     position: relative;
@@ -113,7 +109,7 @@
     height: 3em;
     padding: 1em;
     font-size: 1.0875em;
-    width: 47em;
+    width: -moz-available;
   }
 
   #p-search h3 {
@@ -215,7 +211,7 @@
   /*  footer elements goes here  */
 
   .mw-footer {
-    padding: 0 20em;
+    padding: 0 10em 0 20em;
   }
   
   .mw-footer #footer-icons {
@@ -275,4 +271,42 @@
     text-align: left;
     font-size: .875em;
   }
-  
+
+  // other screen types
+
+  @media only screen and (max-width: 860px) {
+
+    #p-logo {
+        display: none;
+    }
+
+    #p- ul {
+        margin: 0 0 0 4em;
+        width: -moz-fit-content;
+        justify-content: center;
+    }
+
+    #p- li {
+        padding: 0 5px;
+    }
+
+    #p-search {
+        margin: 5em 5em;
+    }
+
+    #mw-navigation {
+        display: none;
+    }
+
+    #page-tools {
+        display: none;
+    }
+
+    #content {
+        margin: 10em 5em;
+    }
+
+    .mw-footer {
+        display: none;
+    }
+  }
