@@ -47,13 +47,21 @@ html {
   font-size: varfont;
   letter-spacing: varletter;
 
+  // customize scrollbar for browsers that support it
   scrollbar-color: rgba(0,0,0,0.8) rgba(0,0,0,0.2);
   scrollbar-width: thin;
+
+  // smooth scrolling
+  scroll-behavior: smooth;
 
   body {
     color: #000;
     background-color: #fff;
     overflow-y: scroll;
+
+    // for better font-rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     a {
 
