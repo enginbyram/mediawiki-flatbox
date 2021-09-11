@@ -1,49 +1,131 @@
 /* Styles appear on displays 750 pixels wide and below */
 
-//Galaxy Note 10+ and such
-@media screen and (max-width: 414px) {
+// Mobile version is made only for reading, not editing directly
+// so its really constricted for a contributor, but better for fast-checking
 
-    #mw-wrapper {
+#p-tb #t-cite,
+#t-print,#t-permalink,
+#t-info, #p-namespaces-label,
+#p-views-label, #p-cactions-label {
+  display: none;
+}
+
+#mw-wrapper {
+    position: relative;
+
+    #header-wrapper {
         position: relative;
-      
-        #header-wrapper {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 9999;
-          display: block;
-          margin: 0;
-          width: 100%;
-          min-width: 1024px;
-          height: 48px;
-          max-height: 44px;
-          background: #000000eb;
-          font-size: 17px;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-    }
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 9999;
+        display: block;
+        margin: 0;
+        width: 100%;
+        min-width: 1024px;
+        height: 48px;
+        max-height: 44px;
+        background: #fff;
+        font-size: 17px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
 
-    #p-logo {
-        display: flex;
-        justify-content: start;
-        margin: 0em 0em 2em 2em;
-        width: max-content;
-
-        img {
-          margin: .25em;
-        }
-      
-        a {
-          text-decoration: none;
-          opacity: 1;
-        }
-        
-        h1 {
+        #cat-tree {
             display: none;
         }
-      }
+    }
 }
+
+#p-logo {
+    display: flex;
+    justify-content: start;
+    padding: 1em;
+    position: relative;
+    
+
+    img {
+        filter: invert(100%);
+        display: flex;
+        position: relative;
+        top: 4.875em;
+    }
+    
+    a {
+        text-decoration: none;
+        opacity: 1;
+    }
+    
+    h1 {
+        display: none;
+    }
+}
+
+// Search bar goes here
+#p-search {
+    display: flex;
+    justify-content: center;
+    margin: 1em 5em;
+    padding: 0 0;
+    clear: both;
+    position: relative;
+    top: 30px;
+
+    h3 {
+    display: none;
+    }
+
+    #searchInput {
+    height: 3em;
+    padding: 1em;
+    font-size: 1.0875em;
+    width: 60vw;
+    text-align: center;
+    }
+}
+
+//Page tools are invisible for mobile(maybe for now)
+#page-tools {
+    display: none;
+}
+
+#mw-navigation {
+    display: none;
+}
+
+#content .mw-body {
+    margin: 0 5em;
+    padding-left: 10em;
+  }
+
+#content {
+    margin: 2em;
+    padding: 2em;
+    z-index: 5;
+
+    .firstHeading {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.875em;
+    letter-spacing: -.015em;
+    }
+
+    #mw-content-text {
+    line-height: 1.6;
+
+    // Category link elements are here
+    #catlinks {
+        text-align: left;
+        font-size: .875em;
+    }
+    }
+}
+
+
+.mw-footer {
+    display: none;
+  }
+
+
