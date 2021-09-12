@@ -14,7 +14,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 1111;
     display: block;
     margin: 0;
     width: 100%;
@@ -44,7 +44,7 @@
       #p- {
         ul {
           cursor: default;
-          margin: -3.7em 200px;
+          margin: -2.25em 200px;
           width: auto;
           height: 44px;
           display: -webkit-box;
@@ -52,7 +52,7 @@
           display: flex;
           -webkit-box-pack: justify;
           -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: space-evenly;
           -webkit-user-select: none;
           -moz-user-select: none;
           -ms-user-select: none;
@@ -69,18 +69,81 @@
   }
 }
 
+// Sidebar for navigation(WIP)
+.sidebar {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #141414;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+
+  box-shadow: 13px 0px 12px -6px #000000b8;
+  -webkit-box-shadow: 13px 0px 12px -6px #000000b8;
+  -moz-box-shadow: 13px 0px 12px -6px rgba(0,0,0,0.72);
+
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 1.9em;
+    margin-left: 50px;
+  }
+}
+
+#button-close-cont {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  justify-content: start;
+  top: 0.4em;
+  left: 1em;
+
+  .openbtn {
+    cursor: pointer;
+    background-color: unset;
+    color: #fff;
+    border: none;
+    font-size: 1.275em;
+    opacity: .8;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 // Upper-left logo elements goes gere
 #p-logo {
   display: flex;
-  justify-content: start;
-  margin: 0em 0em 2em 2em;
-  width: max-content;
+  justify-content: end;
+  margin: 0;
+  position: relative;
+  right: 1em;
 
   img {
     border: 0;
     vertical-align: unset;
-    position: absolute;
-    margin-top: 0.3em;
+    margin-top: 0.455em;
+    height: 28px;
   }
 
   a {
@@ -101,6 +164,7 @@
     position: relative;
     left: 2.2em;
     top: .2em;
+    display: none; // make text invisible for now
   }
 }
 
@@ -108,7 +172,7 @@
 #p-search {
   display: flex;
   justify-content: center;
-  margin: 5em 5em 0em 20em;
+  margin: 5em;
   padding: 0 0;
   clear: both;
   position: relative;
@@ -161,55 +225,36 @@
 }
 
 
-// Left navigation panel elements are here
-// I need to make it different, as its not eye-candy for now
+// Left navigation panel elements are here which is in the sidebar
 #mw-navigation {
-  display: flex;
-  flex-flow: column;
-  width: max-content;
-  padding: 1em 1em 1em 0;
-  margin-right: 1em;
-  background: #000000f2;
-  box-shadow: -1em 0em 1em #585859;
-  border-radius: 20px;
-  margin: 20em 0 0.875em 3.875em;
-  font-size: 0.675em;
-  float: left;
-  position: relative;
+  padding: 2em;
+  font-size: .675em;
+
+  li {
+    display: inline;
+  }
 
   h3 {
-    font-size: .875em;
-    font-weight: 400;
-    color: #f5f5f7;
-    text-align: center;
+    color: #fff;
+    opacity: .8;
+    font-weight: 600;
+    padding: 1em 0;
   }
 
   a {
-    color: #f5f5f7;
-    transition: opacity .2s ease;
-    font-weight: 300;
-    opacity: .8;
+    font-size: 1.275em;
+    color: #fff;
+    opacity: .6;
+    font-weight: 400;
+    transition: .2s;
+    padding: .7em 0;
 
     &:hover {
-      opacity: 1;
+      opacity:1;
     }
   }
+} 
 
-  a.new, #p-personal a.new {
-    color: #575757;
-  }
-
-  .mw-portlet-body {
-    padding: 1.275em;
-
-    li {
-      display: grid;
-      padding: 0.2em;
-      padding-top: .375em;
-      text-align: center;
-    }
-  }
-}
 
 // Content elements goes here
 #content .mw-body {
@@ -218,9 +263,13 @@
 }
 
 #content {
-  margin: 10em 6em 10em 15.875em;
+  margin: 7em 6em 10em 7em;
   padding: 2em;
-  box-shadow: -1.875em 1em 2em rgba(0,0,0,0.2);
+
+  box-shadow: -3px 11px 28px 8px #00000063;
+  -webkit-box-shadow: -3px 11px 28px 8px #00000063;
+  -moz-box-shadow: -3px 11px 28px 8px #00000063;
+
   position: relative;
   z-index: 5;
 

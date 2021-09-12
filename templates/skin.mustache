@@ -13,6 +13,25 @@
 			{{#data-portlets-sidebar.data-portlets-first}}{{>Portlet}}{{/data-portlets-sidebar.data-portlets-first}}
 		</div>
 	</div>
+	<div id="button-close-cont">
+		<button class="openbtn" onclick="openNav()">&#9776</button>
+	</div>
+	<div id="left-sidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<!-- here comes the navigation menus -->
+		<div id="mw-navigation">
+			{{#data-portlets}}
+			<div id="user-tools">
+				{{#data-personal}}{{>Portlet}}{{/data-personal}}
+			</div>
+			<div id="site-navigation">
+				{{#data-portlets-sidebar.array-portlets-rest}}{{>Portlet}}{{/data-portlets-sidebar.array-portlets-rest}}
+				{{#data-portlets.data-languages}}{{>Portlet}}{{/data-portlets.data-languages}}
+			</div>
+			{{/data-portlets}}
+		</div>
+	</div>
+	<script src="\mediawiki\skins\Flatbox\resources\sidebar.js"></script> 
 	{{#data-search-box}}
 	<form action="{{form-action}}" role="search" class="mw-portlet" id="p-search">
 		<input type="hidden" name="title" value="{{page-title}}">
@@ -22,17 +41,7 @@
 		{{{html-input}}}
 	</form>
 	{{/data-search-box}}
-	<div id="mw-navigation">
-		{{#data-portlets}}
-		<div id="user-tools">
-			{{#data-personal}}{{>Portlet}}{{/data-personal}}
-		</div>
-		<div id="site-navigation">
-			{{#data-portlets-sidebar.array-portlets-rest}}{{>Portlet}}{{/data-portlets-sidebar.array-portlets-rest}}
-			{{#data-portlets.data-languages}}{{>Portlet}}{{/data-portlets.data-languages}}
-		</div>
-		{{/data-portlets}}
-	</div>
+
 	<div class="mw-body" id="content" role="main">
 		<div id="siteNotice">{{{html-site-notice}}}</div>
 		{{{html-user-message}}}
