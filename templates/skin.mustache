@@ -14,7 +14,7 @@
 		</div>
 	</div>
 	<div id="button-close-cont">
-		<button class="openbtn" onclick="toggleNav()">&#9776</button>
+		<button class="openbtn">&#9776</button>
 	</div>
 	<div id="left-sidebar" class="sidebar">
 		<!-- here comes the navigation menus -->
@@ -31,55 +31,57 @@
 		</div>
 	</div>
 	<script src="../skins/Flatbox/resources/sidebar.js"></script> 
-	{{#data-search-box}}
-	<form action="{{form-action}}" role="search" class="mw-portlet" id="p-search">
-		<input type="hidden" name="title" value="{{page-title}}">
-		<h3>
-			<label id="search_text" for="searchInput">{{msg-search}}</label>
-		</h3>
-		{{{html-input}}}
-	</form>
-	{{/data-search-box}}
+	<div id="flat-body" class="body-wrapper">
+		{{#data-search-box}}
+		<form action="{{form-action}}" role="search" class="mw-portlet" id="p-search">
+			<input type="hidden" name="title" value="{{page-title}}">
+			<h3>
+				<label id="search_text" for="searchInput">{{msg-search}}</label>
+			</h3>
+			{{{html-input}}}
+		</form>
+		{{/data-search-box}}
 
-	<div class="mw-body" id="content" role="main">
-		<div id="siteNotice">{{{html-site-notice}}}</div>
-		{{{html-user-message}}}
-		{{#data-portlets}}
-		<div id="page-tools">
-			{{#data-namespaces}}{{>Portlet}}{{/data-namespaces}}
-			{{#data-variants}}{{>Portlet}}{{/data-variants}}
-			{{#data-views}}{{>Portlet}}{{/data-views}}
-			{{#data-actions}}{{>Portlet}}{{/data-actions}}
-		</div>
-		{{/data-portlets}}
-		<div class="mw-indicators mw-body-content">
-		{{#array-indicators}}
-		<div id="{{id}}" class="{{class}}">{{{html}}}</div>
-		{{/array-indicators}}
-		</div>
-		<h1 class="firstHeading" {{{html-user-language-attributes}}}>{{{html-title}}}</h1>
-		<div id="siteSub">{{msg-tagline}}</div>
-		<div class="mw-body-content">
-			<div id="contentSub">
-				{{{html-subtitle}}}
-				{{{html-undelete-link}}}
+		<div class="mw-body" id="content" role="main">
+			<div id="siteNotice">{{{html-site-notice}}}</div>
+			{{{html-user-message}}}
+			{{#data-portlets}}
+			<div id="page-tools">
+				{{#data-namespaces}}{{>Portlet}}{{/data-namespaces}}
+				{{#data-variants}}{{>Portlet}}{{/data-variants}}
+				{{#data-views}}{{>Portlet}}{{/data-views}}
+				{{#data-actions}}{{>Portlet}}{{/data-actions}}
 			</div>
-			{{{html-body-content}}}
+			{{/data-portlets}}
+			<div class="mw-indicators mw-body-content">
+			{{#array-indicators}}
+			<div id="{{id}}" class="{{class}}">{{{html}}}</div>
+			{{/array-indicators}}
+			</div>
+			<h1 class="firstHeading" {{{html-user-language-attributes}}}>{{{html-title}}}</h1>
+			<div id="siteSub">{{msg-tagline}}</div>
+			<div class="mw-body-content">
+				<div id="contentSub">
+					{{{html-subtitle}}}
+					{{{html-undelete-link}}}
+				</div>
+				{{{html-body-content}}}
+				<!-- todo: replace with .mixin-clearfix -->
+				<div class="visualClear"></div>
+				{{{html-categories}}}
+			</div>
+			{{{html-after-content}}}
+		</div>
+		<div id="footer" class="mw-footer" role="contentinfo" {{{html-user-language-attributes}}}>
+			{{#data-footer}}
+			{{!}}{{#data-icons}}{{>FooterList}}{{/data-icons}}
+			{{!}}<div id="footer-list">
+			{{!}}{{#data-info}}{{>FooterList}}{{/data-info}}
+			{{!}}{{#data-places}}{{>FooterList}}{{/data-places}}
+			{{!}}</div>
+			{{/data-footer}}
 			<!-- todo: replace with .mixin-clearfix -->
 			<div class="visualClear"></div>
-			{{{html-categories}}}
 		</div>
-		{{{html-after-content}}}
-	</div>
-	<div id="footer" class="mw-footer" role="contentinfo" {{{html-user-language-attributes}}}>
-		{{#data-footer}}
-		{{!}}{{#data-icons}}{{>FooterList}}{{/data-icons}}
-		{{!}}<div id="footer-list">
-		{{!}}{{#data-info}}{{>FooterList}}{{/data-info}}
-		{{!}}{{#data-places}}{{>FooterList}}{{/data-places}}
-		{{!}}</div>
-		{{/data-footer}}
-		<!-- todo: replace with .mixin-clearfix -->
-		<div class="visualClear"></div>
 	</div>
 </div>

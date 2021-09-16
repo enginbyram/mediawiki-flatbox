@@ -1,3 +1,6 @@
+document.querySelector(".openbtn").addEventListener("click", toggleNav);
+  document.querySelector("#flat-body").addEventListener("click", close);
+
 function toggleNav() {
     if (document.getElementById("left-sidebar").style.width == "250px") {
       return close();
