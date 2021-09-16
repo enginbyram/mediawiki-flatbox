@@ -27,11 +27,22 @@ html {
     background-color: #fff;
     overflow-y: scroll;
 
+    font-synthesis: none;
+    -moz-font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "kern";
+    direction: ltr;
+
     a {
       color: #06c;
 
       &:hover {
         text-decoration: unset;
+        
+        &:focus {
+          text-decoration: unset;
+        }
       }
 
       &:visited {
