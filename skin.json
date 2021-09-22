@@ -79,5 +79,5 @@
 			"+ext.echo.styles.badge": "resources/extensions/echo.styles.badge.less"
 		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
